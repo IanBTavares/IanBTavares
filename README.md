@@ -1,129 +1,109 @@
-<h1 align="center">👋 Olá, eu sou Ian Barbosa Tavares</h1>
+<h1 align="center">Ian Barbosa Tavares</h1>
 
 <p align="center">
 Desenvolvedor focado em sistemas complexos, integrações e soluções digitais.
 </p>
 
 <p align="center">
-
 <a href="https://www.linkedin.com/in/ianbtavares/">
-<img src="https://img.shields.io/badge/LinkedIn-Ian%20Tavares-0A66C2?style=for-the-badge&logo=linkedin"/>
+<img src="https://skillicons.dev/icons?i=linkedin" height="32"/>
 </a>
-
 <a href="mailto:ianbtavares@gmail.com">
-<img src="https://img.shields.io/badge/Email-Contato-red?style=for-the-badge&logo=gmail"/>
+<img src="https://skillicons.dev/icons?i=gmail" height="32"/>
 </a>
-
 <a href="https://ianbtavares.github.io/IanBTavares/">
-<img src="https://img.shields.io/badge/Portfolio-Site-black?style=for-the-badge&logo=github"/>
+<img src="https://skillicons.dev/icons?i=github" height="32"/>
 </a>
-
 </p>
 
 ---
 
-# 🚀 Sobre mim
+## About
 
-Sou desenvolvedor e analista com experiência em **sistemas de alto impacto**, integrações críticas e ambientes complexos.
+Software developer and analyst with experience working on large-scale systems, integrations and mission-critical environments.
 
-Tenho experiência com projetos ligados ao ecossistema de saúde digital no Brasil como:
+My work has involved projects connected to the Brazilian digital health ecosystem, including systems such as **Meu SUS Digital**, **SIPNI**, and **RNDS**, where reliability, data consistency and integration between services are essential.
 
-- Meu SUS Digital
-- SIPNI
-- RNDS
-
-Trabalho com desenvolvimento, análise técnica, suporte a sistemas em produção e integração de APIs.
+I have experience navigating both technical and operational contexts, collaborating with teams to design solutions, analyze requirements and support systems running in production environments.
 
 ---
 
-# 🧠 Stack Tecnológica
+## Tech Stack
 
 ### Backend
 
 <p>
-<img src="https://skillicons.dev/icons?i=java,nodejs,python,nestjs,spring"/>
+<img src="https://skillicons.dev/icons?i=java,nodejs,python,nestjs,spring" />
 </p>
 
 ### Frontend
 
 <p>
-<img src="https://skillicons.dev/icons?i=angular,html,css,javascript"/>
+<img src="https://skillicons.dev/icons?i=angular,html,css,javascript" />
 </p>
 
-### Ferramentas
+### Tools and Ecosystem
 
 <p>
-<img src="https://skillicons.dev/icons?i=git,github,docker,postman"/>
+<img src="https://skillicons.dev/icons?i=git,github,docker,postman" />
 </p>
 
 ---
 
-# 📊 GitHub Stats
+## GitHub Statistics
 
 <p align="center">
 
-<img height="160em" src="https://github-readme-stats.vercel.app/api?username=IanBTavares&show_icons=true&theme=tokyonight"/>
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=IanBTavares&show_icons=true&theme=tokyonight"/>
 
-<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=IanBTavares&layout=compact&theme=tokyonight"/>
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=IanBTavares&layout=compact&theme=tokyonight"/>
 
 </p>
 
 ---
 
-# 🧩 Projetos e estudos
+## Professional Context
 
-- Desenvolvimento de soluções web e APIs
-- Integrações entre sistemas complexos
-- Automação de processos
-- Desenvolvimento backend
-- Estudo contínuo de arquitetura e boas práticas
+### Zello Tecnologia
 
----
+Participation in the development and support of systems related to national digital health platforms. Work included:
 
-# 🌍 Experiência relevante
+- Technical analysis of requirements
+- Participation in development flows
+- Validation of integrations
+- Support for production environments
+- Collaboration with teams responsible for national digital health systems
 
-💻 **Zello Tecnologia**
-
-Atuação em sistemas críticos ligados à saúde pública digital, incluindo:
+Systems involved:
 
 - Meu SUS Digital
 - SIPNI
 - RNDS
 
-Trabalho com desenvolvimento, análise técnica, testes e suporte a produção.
+---
+
+## Areas of Interest
+
+- Software architecture
+- Backend systems
+- API design and integrations
+- Large-scale systems
+- Automation and developer tooling
 
 ---
 
-# 🔥 Atividade no GitHub
+## Portfolio
 
-<p align="center">
+Full portfolio and project overview available at:
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=IanBTavares&theme=tokyonight"/>
-
-</p>
-
----
-
-# 🐍 Snake de contribuições
-
-![snake gif](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
-
----
-
-# 📫 Contato
-
-📧 Email: ianbtavares@gmail.com  
-
-💼 LinkedIn  
-https://www.linkedin.com/in/ianbtavares/
-
-🌐 Portfólio  
 https://ianbtavares.github.io/IanBTavares/
 
 ---
 
-<p align="center">
+## Contact
 
-"Resolver problemas com tecnologia é mais importante do que apenas escrever código."
+LinkedIn  
+https://www.linkedin.com/in/ianbtavares/
 
-</p>
+Email  
+ianbtavares@gmail.com
