@@ -18,17 +18,17 @@ Desenvolvedor focado em sistemas complexos, integrações e soluções digitais.
 
 ---
 
-## About
+## Sobre
 
-Software developer and analyst with experience working on large-scale systems, integrations and mission-critical environments.
+Desenvolvedor e analista com experiência em sistemas de grande escala, integrações entre serviços e ambientes críticos de produção.
 
-My work has involved projects connected to the Brazilian digital health ecosystem, including systems such as **Meu SUS Digital**, **SIPNI**, and **RNDS**, where reliability, data consistency and integration between services are essential.
+Minha atuação inclui participação em projetos relacionados ao ecossistema de saúde digital brasileiro, com contato com sistemas como **Meu SUS Digital**, **SIPNI** e **RNDS**, onde estabilidade, confiabilidade e integração entre plataformas são essenciais.
 
-I have experience navigating both technical and operational contexts, collaborating with teams to design solutions, analyze requirements and support systems running in production environments.
+Tenho experiência tanto no desenvolvimento quanto na análise técnica de demandas, participando da construção de soluções, entendimento de requisitos e suporte a sistemas em produção.
 
 ---
 
-## Tech Stack
+## Stack Tecnológica
 
 ### Backend
 
@@ -42,7 +42,7 @@ I have experience navigating both technical and operational contexts, collaborat
 <img src="https://skillicons.dev/icons?i=angular,html,css,javascript" />
 </p>
 
-### Tools and Ecosystem
+### Ferramentas e Ecossistema
 
 <p>
 <img src="https://skillicons.dev/icons?i=git,github,docker,postman" />
@@ -50,7 +50,7 @@ I have experience navigating both technical and operational contexts, collaborat
 
 ---
 
-## GitHub Statistics
+## Estatísticas do GitHub
 
 <p align="center">
 
@@ -62,19 +62,21 @@ I have experience navigating both technical and operational contexts, collaborat
 
 ---
 
-## Professional Context
+## Experiência Profissional
 
 ### Zello Tecnologia
 
-Participation in the development and support of systems related to national digital health platforms. Work included:
+Participação no desenvolvimento e suporte de sistemas ligados à saúde digital nacional.
 
-- Technical analysis of requirements
-- Participation in development flows
-- Validation of integrations
-- Support for production environments
-- Collaboration with teams responsible for national digital health systems
+Atividades realizadas:
 
-Systems involved:
+- análise técnica de requisitos
+- participação em fluxos de desenvolvimento
+- validação de integrações
+- suporte a ambientes de produção
+- colaboração com equipes responsáveis por sistemas nacionais de saúde digital
+
+Sistemas envolvidos:
 
 - Meu SUS Digital
 - SIPNI
@@ -82,25 +84,25 @@ Systems involved:
 
 ---
 
-## Areas of Interest
+## Áreas de Interesse
 
-- Software architecture
-- Backend systems
-- API design and integrations
-- Large-scale systems
-- Automation and developer tooling
+- Arquitetura de software
+- Sistemas backend
+- APIs e integrações
+- Sistemas de grande escala
+- Automação e ferramentas para desenvolvimento
 
 ---
 
-## Portfolio
+## Portfólio
 
-Full portfolio and project overview available at:
+Portfólio completo disponível em:
 
 https://ianbtavares.github.io/IanBTavares/
 
 ---
 
-## Contact
+## Contato
 
 LinkedIn  
 https://www.linkedin.com/in/ianbtavares/
