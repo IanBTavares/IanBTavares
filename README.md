@@ -33,7 +33,7 @@ Tenho experiência tanto no desenvolvimento quanto na análise técnica de deman
 ### Backend
 
 <p>
-<img src="https://skillicons.dev/icons?i=java,nodejs,python,nestjs,spring" />
+<img src="https://skillicons.dev/icons?i=java,spring,maven,gradle,nestjs,nodejs,python" />
 </p>
 
 ### Frontend
@@ -70,10 +70,10 @@ Participação no desenvolvimento e suporte de sistemas ligados à saúde digita
 
 Atividades realizadas:
 
-- análise técnica de requisitos
-- participação em fluxos de desenvolvimento
-- validação de integrações
-- suporte a ambientes de produção
+- análise técnica de requisitos e suporte a ambientes de produção
+- participação em fluxos de desenvolvimento com Java (Spring)
+- gestão de dependências e build com Maven e Gradle
+- desenvolvimento de integrações e tratativas de concorrência (Multithreading)
 - colaboração com equipes responsáveis por sistemas nacionais de saúde digital
 
 Sistemas envolvidos:
