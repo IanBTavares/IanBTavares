@@ -546,13 +546,6 @@ p {
   object-fit: cover;
   object-position: center 18%;
   border-radius: 4px;
-  filter: grayscale(1) contrast(1.05);
-  transition: filter 0.8s var(--ease-out), transform 0.8s var(--ease-out);
-}
-
-.hero-portrait:hover img {
-  filter: grayscale(0) contrast(1);
-  transform: scale(1.01);
 }
 
 .hero-portrait::after {
@@ -1077,12 +1070,6 @@ p {
   padding-top: 2rem;
   font-size: 0.8rem;
   color: var(--ink-faint);
-}
-
-.footer-meta .motto {
-  font-family: var(--font-mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 /* --- Animações de entrada --- */

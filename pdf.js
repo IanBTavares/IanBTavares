@@ -30,52 +30,53 @@
       'body {',
       '  font-family: Arial, Helvetica, sans-serif;',
       '  font-size: 10pt;',
-      '  line-height: 1.42;',
+      '  line-height: 1.4;',
       '  color: #000;',
       '  background: #fff;',
-      '  -webkit-print-color-adjust: exact;',
-      '  print-color-adjust: exact;',
       '}',
-      'h1 { font-size: 20pt; line-height: 1.15; margin: 0 0 4pt; letter-spacing: 0.2pt; }',
+      'h1 { font-size: 20pt; line-height: 1.15; margin: 0 0 3pt; }',
       'h2 {',
       '  font-size: 11pt;',
       '  text-transform: uppercase;',
-      '  letter-spacing: 0.8pt;',
-      '  margin: 14pt 0 6pt;',
+      '  letter-spacing: 0.6pt;',
+      '  margin: 12pt 0 5pt;',
       '  padding-bottom: 2pt;',
       '  border-bottom: 1pt solid #000;',
       '  page-break-after: avoid;',
       '}',
       'h3 { font-size: 10.5pt; margin: 0; }',
       'p { margin: 0 0 4pt; }',
-      'ul { margin: 4pt 0 0; padding-left: 14pt; }',
-      'li { margin-bottom: 2.5pt; }',
-      '.role-line { font-size: 10pt; margin: 0 0 1pt; }',
-      '.headline { font-size: 11pt; margin: 0 0 5pt; }',
+      'a { color: inherit; text-decoration: none; }',
+      'ul { margin: 3pt 0 0; padding-left: 14pt; }',
+      'li { margin-bottom: 2pt; }',
+      'header { margin-bottom: 2pt; }',
+      '.role-line { font-size: 10.5pt; margin: 0 0 2pt; }',
       '.contact { font-size: 9.5pt; margin: 0; }',
       '.contact span { white-space: nowrap; }',
-      '.job { margin-bottom: 10pt; page-break-inside: avoid; }',
-      '.job-head { margin-bottom: 2pt; }',
-      '.job-meta { font-size: 9.5pt; margin: 0; }',
-      '.period { font-size: 9.5pt; margin: 0 0 3pt; }',
-      '.context { font-size: 9.5pt; margin: 0 0 3pt; }',
-      '.skill-row { margin-bottom: 3pt; }',
-      '.project { margin-bottom: 7pt; page-break-inside: avoid; }',
-      '.project-name { font-size: 10pt; margin: 0 0 1pt; }',
-      '.project-tech { font-size: 9.5pt; margin: 0 0 1pt; }',
-      'header { margin-bottom: 4pt; }',
+      '.job { margin-bottom: 9pt; page-break-inside: avoid; }',
+      '.job-meta { font-size: 9.5pt; margin: 1pt 0 2pt; }',
+      '.context { font-size: 9.5pt; font-style: italic; margin: 0 0 2pt; }',
+      '.skill-row { margin-bottom: 2pt; }',
+      '.entry { margin-bottom: 5pt; }',
     ].join('\n');
+  }
+
+  function link(href, label) {
+    return '<a href="' + esc(href) + '">' + esc(label) + '</a>';
+  }
+
+  function section(title, body) {
+    return '<h2>' + esc(title) + '</h2>' + body;
   }
 
   function buildHeader(r) {
     var contact = [
       esc(r.location),
       esc(r.phone),
-      esc(r.email),
-      esc(r.linkedin),
-      esc(r.github),
+      link('mailto:' + r.email, r.email),
+      link('https://' + r.linkedin, r.linkedin),
+      link('https://' + r.github, r.github),
     ]
-      .filter(Boolean)
       .map(function (item) {
         return '<span>' + item + '</span>';
       })
@@ -90,30 +91,6 @@
     );
   }
 
-  function buildExperience(list) {
-    return list
-      .map(function (job) {
-        var bullets = job.bullets
-          .map(function (b) {
-            return '<li>' + esc(b) + '</li>';
-          })
-          .join('');
-
-        var meta = [job.company, job.location].filter(Boolean).join(' — ');
-
-        return (
-          '<div class="job">' +
-          '<div class="job-head"><h3>' + esc(job.role) + '</h3></div>' +
-          '<p class="job-meta"><strong>' + esc(meta) + '</strong></p>' +
-          '<p class="period">' + esc(job.period) + '</p>' +
-          (job.context ? '<p class="context">' + esc(job.context) + '</p>' : '') +
-          '<ul>' + bullets + '</ul>' +
-          '</div>'
-        );
-      })
-      .join('');
-  }
-
   function buildSkills(list) {
     return list
       .map(function (group) {
@@ -125,42 +102,71 @@
       .join('');
   }
 
-  function buildProjects(list) {
+  function buildExperience(list) {
     return list
-      .map(function (project) {
+      .map(function (job) {
+        var bullets = job.bullets
+          .map(function (b) {
+            return '<li>' + esc(b) + '</li>';
+          })
+          .join('');
+
+        var meta = [job.company, job.location, job.period].filter(Boolean).join(' | ');
+
         return (
-          '<div class="project">' +
-          '<p class="project-name"><strong>' + esc(project.name) + '</strong></p>' +
-          '<p class="project-tech">' + esc(project.tech) + '</p>' +
-          '<p>' + esc(project.description) + '</p>' +
+          '<div class="job">' +
+          '<h3>' + esc(job.role) + '</h3>' +
+          '<p class="job-meta">' + esc(meta) + '</p>' +
+          (job.context ? '<p class="context">' + esc(job.context) + '</p>' : '') +
+          '<ul>' + bullets + '</ul>' +
           '</div>'
         );
       })
       .join('');
   }
 
+  function buildEducation(list) {
+    return list
+      .map(function (item) {
+        return (
+          '<p class="entry"><strong>' + esc(item.degree) + '</strong><br>' +
+          esc([item.school, item.period].filter(Boolean).join(' | ')) + '</p>'
+        );
+      })
+      .join('');
+  }
+
+  function buildCertifications(list) {
+    return (
+      '<ul>' +
+      list
+        .map(function (item) {
+          return '<li>' + esc([item.name, item.issuer, item.year].filter(Boolean).join(' - ')) + '</li>';
+        })
+        .join('') +
+      '</ul>'
+    );
+  }
+
+  // Ordem pensada para ATS e recrutador: palavras-chave (resumo e habilidades)
+  // no topo, depois experiência em ordem cronológica reversa.
   function buildDocument(r) {
+    var education = r.education || [];
+    var certifications = r.certifications || [];
+
     return (
       '<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">' +
       '<title>' + esc(FILENAME) + '</title>' +
+      '<meta name="author" content="' + esc(r.name) + '">' +
+      '<meta name="description" content="' + esc(r.title) + '">' +
       '<style>' + styles() + '</style></head><body>' +
       buildHeader(r) +
-      '<h2>Resumo Profissional</h2>' +
-      '<p>' + esc(r.summary) + '</p>' +
-      '<h2>Experiência Profissional</h2>' +
-      buildExperience(r.experience) +
-      '<h2>Habilidades Técnicas</h2>' +
-      buildSkills(r.skills) +
-      '<h2>Projetos</h2>' +
-      buildProjects(r.projects) +
-      '<h2>Idiomas</h2>' +
-      '<ul>' +
-      r.languages
-        .map(function (l) {
-          return '<li>' + esc(l) + '</li>';
-        })
-        .join('') +
-      '</ul>' +
+      section('Resumo Profissional', '<p>' + esc(r.summary) + '</p>') +
+      section('Habilidades Técnicas', buildSkills(r.skills)) +
+      section('Experiência Profissional', buildExperience(r.experience)) +
+      (education.length ? section('Formação Acadêmica', buildEducation(education)) : '') +
+      (certifications.length ? section('Certificações', buildCertifications(certifications)) : '') +
+      section('Idiomas', '<p>' + r.languages.map(esc).join(' | ') + '</p>') +
       '</body></html>'
     );
   }
