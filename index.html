@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="Ian Barbosa Tavares" />
   <meta property="og:title" content="Ian Barbosa Tavares — Full Stack Software Engineer" />
   <meta property="og:description"
-    content="Engenheiro de software full stack. Sistemas nacionais de saúde pública, arquitetura multi-tenant e infraestrutura em Kubernetes." />
+    content="Engenheiro de software full stack. Sistemas nacionais de saúde pública, SaaS próprio em produção e infraestrutura em Kubernetes." />
   <meta property="og:url" content="https://ianbtavares.github.io/IanBTavares/" />
   <meta property="og:image" content="https://ianbtavares.github.io/IanBTavares/assets/ian-tavares.png" />
   <meta property="og:locale" content="pt_BR" />
@@ -56,7 +56,7 @@
     "knowsAbout": [
       "Java", "Spring Boot", "TypeScript", "NestJS", "React", "Angular",
       "PostgreSQL", "APIs REST", "Docker", "Kubernetes", "CI/CD",
-      "Integração de sistemas", "Arquitetura multi-tenant"
+      "Integração de sistemas", "Arquitetura SaaS"
     ],
     "worksFor": [
       { "@type": "Organization", "name": "Atenza" },
@@ -171,11 +171,11 @@
     <section class="metrics" aria-label="Números em destaque">
       <dl class="shell metrics-inner">
         <div class="metric" data-reveal>
-          <dd><span data-count-to="267">267</span></dd>
+          <dd><span data-count-to="300">300</span>+</dd>
           <dt>endpoints REST no Atenza</dt>
         </div>
         <div class="metric" data-reveal style="--reveal-delay: 90ms">
-          <dd><span data-count-to="27">27</span></dd>
+          <dd><span data-count-to="28">28</span></dd>
           <dt>módulos construídos do zero</dt>
         </div>
         <div class="metric" data-reveal style="--reveal-delay: 180ms">
@@ -234,18 +234,18 @@
           <article class="job" data-current="true" data-reveal>
             <div class="job-head">
               <div>
-                <h3>Desenvolvedor Full Stack</h3>
-                <p class="company">Atenza <span class="badge">Projeto próprio</span></p>
+                <h3>Fundador e desenvolvedor full stack</h3>
+                <p class="company">Atenza</p>
               </div>
               <p class="period"><time datetime="2025-12">Dez/2025</time> — Atualmente</p>
             </div>
             <p class="context">SaaS de gestão para clínicas de saúde e estética, com cliente pagante em produção.</p>
             <ul>
-              <li>Desenvolvi sozinho um SaaS com 27 módulos, 267 endpoints REST documentados em OpenAPI e 74
+              <li>Desenvolvi sozinho um SaaS com 28 módulos, mais de 300 endpoints REST documentados em OpenAPI e 74
                 entidades, em NestJS, Prisma, PostgreSQL, React e TypeScript.</li>
-              <li>Projetei arquitetura multi-tenant com isolamento por cliente em Kubernetes — namespace, banco, rede
-                e TLS dedicados —, eliminando o risco de vazamento de dados entre clínicas.</li>
-              <li>Automatizei deploy, rollback, restore e provisionamento de clientes em 15 pipelines de GitHub
+              <li>Projetei o modelo single-tenant por instância: cada clínica roda em ambiente Kubernetes dedicado,
+                com banco, rede, TLS e backup próprios, eliminando o risco de vazamento de dados entre clientes.</li>
+              <li>Automatizei deploy, rollback, restore e a implantação de novas clínicas em 15 pipelines de GitHub
                 Actions, com Helm e Terraform no modelo GitOps.</li>
               <li>Protegi a cadeia de suprimentos com imagens assinadas (Cosign) e varredura Trivy e Gitleaks no
                 CI.</li>
@@ -359,8 +359,8 @@
               Cada cliente roda isolado no próprio ambiente Kubernetes, com banco e backup dedicados.
             </p>
             <div class="project-figures">
-              <div><strong>27</strong><span>módulos de domínio</span></div>
-              <div><strong>267</strong><span>endpoints REST</span></div>
+              <div><strong>28</strong><span>módulos de domínio</span></div>
+              <div><strong>300+</strong><span>endpoints REST</span></div>
               <div><strong>74</strong><span>entidades de dados</span></div>
               <div><strong>15</strong><span>workflows de operação</span></div>
             </div>
@@ -490,7 +490,7 @@
           <div class="skill-group" data-reveal style="--reveal-delay: 320ms">
             <h3>Arquitetura e qualidade</h3>
             <div class="chips">
-              <span class="chip">Arquitetura multi-tenant</span>
+              <span class="chip">Arquitetura SaaS</span>
               <span class="chip">Integração de sistemas</span>
               <span class="chip">OpenAPI</span>
               <span class="chip">Testes automatizados</span>

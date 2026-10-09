@@ -739,20 +739,6 @@ p {
   color: var(--ink-soft);
 }
 
-.job .company .badge {
-  display: inline-block;
-  margin-left: 0.5rem;
-  padding: 0.1rem 0.5rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  vertical-align: 0.1em;
-}
-
 .job .period {
   font-family: var(--font-mono);
   font-size: 0.75rem;

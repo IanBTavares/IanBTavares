@@ -1,7 +1,7 @@
 <h1 align="center">Ian Barbosa Tavares</h1>
 
 <p align="center">
-Engenheiro de software full stack. Sistemas nacionais de saúde pública e SaaS multi-tenant em produção.
+Engenheiro de software full stack. Sistemas nacionais de saúde pública e SaaS próprio em produção.
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@ Minha atuação inclui participação em projetos relacionados ao ecossistema de
 
 Tenho experiência tanto no desenvolvimento quanto na análise técnica de demandas, participando da construção de soluções, entendimento de requisitos e suporte a sistemas em produção.
 
-Em paralelo, criei e opero o **Atenza**, um SaaS multi-tenant de gestão para clínicas — do schema do banco ao cluster Kubernetes, com cliente em produção.
+Em paralelo, criei e opero o **Atenza**, um SaaS de gestão para clínicas — do schema do banco ao cluster Kubernetes, com cliente em produção.
 
 ---
 
@@ -70,8 +70,8 @@ Em paralelo, criei e opero o **Atenza**, um SaaS multi-tenant de gestão para cl
 
 SaaS de gestão para clínicas de saúde e estética, concebido, desenvolvido e operado por mim.
 
-- 27 módulos de domínio, 267 endpoints REST documentados em OpenAPI e 74 entidades de dados
-- arquitetura multi-tenant por isolamento físico: um namespace Kubernetes por clínica, com banco, volume, NetworkPolicy e TLS dedicados
+- 28 módulos de domínio, mais de 300 endpoints REST documentados em OpenAPI e 74 entidades de dados
+- modelo single-tenant por instância: um namespace Kubernetes por clínica, com banco, volume, NetworkPolicy e TLS dedicados
 - provisionamento declarativo em GitOps, com contratos validados por JSON Schema e bundles verificados por SHA-256
 - 15 workflows de operação: provisionamento, deploy, health check, promoção, rollback, restore e arquivamento
 - imagens assinadas com Cosign e fixadas por digest, varredura Trivy e Gitleaks no CI

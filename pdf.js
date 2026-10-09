@@ -22,44 +22,65 @@
       .replace(/"/g, '&quot;');
   }
 
+  var ACCENT = '#1d4e6e';
+
   function styles() {
     return [
-      '@page { size: A4; margin: 14mm 15mm; }',
+      '@page { size: A4; margin: 13mm 15mm 13mm; }',
       '* { box-sizing: border-box; }',
       'html, body { margin: 0; padding: 0; }',
       'body {',
-      '  font-family: Arial, Helvetica, sans-serif;',
-      '  font-size: 10pt;',
-      '  line-height: 1.4;',
-      '  color: #000;',
+      '  font-family: "Segoe UI", "Helvetica Neue", Calibri, Arial, sans-serif;',
+      '  font-size: 9.8pt;',
+      '  line-height: 1.42;',
+      '  color: #262626;',
       '  background: #fff;',
+      '  -webkit-print-color-adjust: exact;',
+      '  print-color-adjust: exact;',
       '}',
-      'h1 { font-size: 20pt; line-height: 1.15; margin: 0 0 3pt; }',
+      'strong { font-weight: 600; color: #111; }',
+      'a { color: inherit; text-decoration: none; }',
+      'p { margin: 0 0 3pt; }',
+      'header { padding-bottom: 7pt; border-bottom: 1.6pt solid ' + ACCENT + '; }',
+      'h1 { font-size: 24pt; font-weight: 700; line-height: 1.1; letter-spacing: -0.3pt; color: #111; margin: 0 0 3pt; }',
+      '.role-line { font-size: 11pt; font-weight: 600; color: ' + ACCENT + '; margin: 0 0 4pt; }',
+      '.contact { font-size: 8.8pt; color: #4a4a4a; margin: 0; }',
+      '.contact span { white-space: nowrap; }',
+      '.sep { color: #9aa7b3; white-space: pre; }',
       'h2 {',
-      '  font-size: 11pt;',
+      '  font-size: 9.6pt;',
+      '  font-weight: 700;',
       '  text-transform: uppercase;',
-      '  letter-spacing: 0.6pt;',
+      '  letter-spacing: 1.3pt;',
+      '  color: ' + ACCENT + ';',
       '  margin: 12pt 0 5pt;',
-      '  padding-bottom: 2pt;',
-      '  border-bottom: 1pt solid #000;',
+      '  padding-bottom: 2.5pt;',
+      '  border-bottom: 0.6pt solid #c9d5df;',
       '  page-break-after: avoid;',
       '}',
-      'h3 { font-size: 10.5pt; margin: 0; }',
-      'p { margin: 0 0 4pt; }',
-      'a { color: inherit; text-decoration: none; }',
-      'ul { margin: 3pt 0 0; padding-left: 14pt; }',
-      'li { margin-bottom: 2pt; }',
-      'header { margin-bottom: 2pt; }',
-      '.role-line { font-size: 10.5pt; margin: 0 0 2pt; }',
-      '.contact { font-size: 9.5pt; margin: 0; }',
-      '.contact span { white-space: nowrap; }',
-      '.job { margin-bottom: 9pt; page-break-inside: avoid; }',
-      '.job-meta { font-size: 9.5pt; margin: 1pt 0 2pt; }',
-      '.context { font-size: 9.5pt; font-style: italic; margin: 0 0 2pt; }',
+      '.summary { text-align: justify; }',
       '.skill-row { margin-bottom: 2pt; }',
+      '.skill-row .label { font-weight: 600; color: ' + ACCENT + '; }',
+      '.job { margin-bottom: 8.5pt; page-break-inside: avoid; }',
+      '.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }',
+      'h3 { font-size: 10.5pt; font-weight: 700; color: #111; margin: 0; }',
+      '.period { font-size: 9pt; color: #4a4a4a; white-space: nowrap; }',
+      '.job-meta { font-size: 9.3pt; margin: 0.5pt 0 2pt; color: #4a4a4a; }',
+      '.job-meta .company { font-weight: 600; color: ' + ACCENT + '; }',
+      '.context { font-size: 9pt; font-style: italic; color: #555; margin: 0 0 2pt; }',
+      'ul { margin: 2pt 0 0; padding-left: 13pt; }',
+      'li { margin-bottom: 1.8pt; padding-left: 1pt; }',
+      'li::marker { color: ' + ACCENT + '; }',
       '.entry { margin-bottom: 5pt; }',
     ].join('\n');
   }
+
+  // Escapa o texto e converte **trecho** em negrito.
+  function rich(value) {
+    return esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  }
+
+  var SEP = '<span class="sep"> | </span>';
 
   function link(href, label) {
     return '<a href="' + esc(href) + '">' + esc(label) + '</a>';
@@ -80,12 +101,12 @@
       .map(function (item) {
         return '<span>' + item + '</span>';
       })
-      .join(' | ');
+      .join(SEP);
 
     return (
       '<header>' +
       '<h1>' + esc(r.name) + '</h1>' +
-      '<p class="role-line"><strong>' + esc(r.title) + '</strong></p>' +
+      '<p class="role-line">' + esc(r.title) + '</p>' +
       '<p class="contact">' + contact + '</p>' +
       '</header>'
     );
@@ -95,7 +116,7 @@
     return list
       .map(function (group) {
         return (
-          '<p class="skill-row"><strong>' + esc(group.label) + ':</strong> ' +
+          '<p class="skill-row"><span class="label">' + esc(group.label) + ':</span> ' +
           esc(group.items) + '</p>'
         );
       })
@@ -107,17 +128,17 @@
       .map(function (job) {
         var bullets = job.bullets
           .map(function (b) {
-            return '<li>' + esc(b) + '</li>';
+            return '<li>' + rich(b) + '</li>';
           })
           .join('');
 
-        var meta = [job.company, job.location, job.period].filter(Boolean).join(' | ');
-
         return (
           '<div class="job">' +
-          '<h3>' + esc(job.role) + '</h3>' +
-          '<p class="job-meta">' + esc(meta) + '</p>' +
-          (job.context ? '<p class="context">' + esc(job.context) + '</p>' : '') +
+          '<div class="job-head"><h3>' + esc(job.role) + '</h3>' +
+          '<span class="period">' + esc(job.period) + '</span></div>' +
+          '<p class="job-meta"><span class="company">' + esc(job.company) + '</span>' +
+          (job.location ? SEP + esc(job.location) : '') + '</p>' +
+          (job.context ? '<p class="context">' + rich(job.context) + '</p>' : '') +
           '<ul>' + bullets + '</ul>' +
           '</div>'
         );
@@ -161,12 +182,12 @@
       '<meta name="description" content="' + esc(r.title) + '">' +
       '<style>' + styles() + '</style></head><body>' +
       buildHeader(r) +
-      section('Resumo Profissional', '<p>' + esc(r.summary) + '</p>') +
+      section('Resumo Profissional', '<p class="summary">' + rich(r.summary) + '</p>') +
       section('Habilidades Técnicas', buildSkills(r.skills)) +
       section('Experiência Profissional', buildExperience(r.experience)) +
       (education.length ? section('Formação Acadêmica', buildEducation(education)) : '') +
       (certifications.length ? section('Certificações', buildCertifications(certifications)) : '') +
-      section('Idiomas', '<p>' + r.languages.map(esc).join(' | ') + '</p>') +
+      section('Idiomas', '<p class="langs">' + r.languages.map(esc).join(SEP) + '</p>') +
       '</body></html>'
     );
   }
